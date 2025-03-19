@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "api": "node server.js",
-    "cmd": "node main.js"
+    "server": "node server.js",
+    "main": "node main.js"
   },
   "keywords": [],
   "author": "",

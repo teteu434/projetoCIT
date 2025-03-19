@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import projetoCitController from './controller/projetoCitController.js';
+import projetoCitController from '../controller/projetoCitController.js';
 
 const router = Router();
 

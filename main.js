@@ -1,5 +1,5 @@
 import {menu, menu1, menu2, cadastrarPonto, listarPonto, buscarPonto, atualizarPonto, deletarPonto, 
-    cadastrarPesquisador, listarPesquisador, buscarPesquisador, atualizarPesquisador, deletarPesquisador} from './src/config/projetoCitConfig.js';
+    cadastrarPesquisador, listarPesquisador, buscarPesquisador, atualizarPesquisador, deletarPesquisador} from './src/cliConfig/projetoCitConfig.js';
 
 /**
  * Menu principal, que chama as outras funções e menus de acordo com a escolha do usuário

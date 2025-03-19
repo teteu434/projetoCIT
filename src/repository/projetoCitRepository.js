@@ -1,4 +1,4 @@
-import consultaSimples from '../database/projetoCitDatabase.js'
+import consultaSimples from '../db/projetoCitDatabase.js'
 
 /**
  * Classe responsável por gerenciar operações no banco de dados para os registros de escavação e pesquisadores.
