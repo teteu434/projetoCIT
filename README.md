@@ -65,7 +65,17 @@ npm install
 
 4️⃣ **Configure as variáveis de ambiente no `.env`**
 
-Solicite a mim e passarei a vocês os dados do banco de dados.
+```sh
+DB_HOST=host
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+DB_PORT=5432
+DB=nome_do_banco
+
+API_PORT=porta_usada
+
+- Solicite a mim para passar o arquivo .env para execução do projeto.
+```
 
 5️⃣ **Inicie a API:**
 
@@ -86,7 +96,9 @@ npm run main
 ### 📍 Pontos de Escavação
 
 - `GET /pontos` → Retorna todos os pontos cadastrados
+- `GET /pesquisadores/ordenado/:coluna` → Retorna todos os pesquisadores de forma ordenada   
 - `GET /pontos/:id` → Retorna um ponto pelo ID
+- `GET /pontos/pesquisador/:responsavel` → Retorna todos os pontos cadastrados por um pesquisador específico
 - `POST /pontos` → Cadastra um novo ponto
 - `PUT /pontos/:id` → Atualiza um ponto existente
 - `DELETE /pontos/:id` → Remove um ponto
@@ -94,6 +106,7 @@ npm run main
 ### 👨‍🔬 Pesquisadores
 
 - `GET /pesquisadores` → Retorna todos os pesquisadores
+- `GET /pesquisadores/ordenado/:coluna` → Retorna todos os pesquisadores de forma ordenada
 - `GET /pesquisadores/:nome` → Busca pesquisador pelo nome
 - `POST /pesquisadores` → Cadastra um novo pesquisador
 - `PUT /pesquisadores/:nome` → Atualiza um pesquisador
@@ -120,3 +133,5 @@ A interface da linha de comando permite que o usuário interaja com o sistema vi
 ---
 
 Se precisar de mais informações, entre em contato! 🚀
+
+Email: matheushcosta434@gmail.com
