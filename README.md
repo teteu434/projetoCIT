@@ -47,11 +47,15 @@ A API permite o gerenciamento de pontos de escavação e pesquisadores, enquanto
 
 1️⃣ **Clone o repositório:**
 
+```sh
 git clone https://github.com/seu-usuario/projetoCIT.git
+```
 
 2️⃣ **Acesse a pasta do projeto:**
 
+```sh
 cd projetoCIT
+```
 
 3️⃣ **Instale as dependências:**
 
@@ -65,11 +69,15 @@ Solicite a mim e passarei a vocês os dados do banco de dados.
 
 5️⃣ **Inicie a API:**
 
+```sh
 npm run server
+```
 
 6️⃣ **Execute a interface CLI:**
 
+```sh
 npm run main
+```
 
 ---
 
