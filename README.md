@@ -21,7 +21,7 @@ A API permite o gerenciamento de pontos de escavação e pesquisadores, enquanto
 
 ## 📂 Estrutura do Projeto
 
-
+```
 /projeto
   ├── /src
   │   ├── /api                       # Aplicação Express (API)
@@ -39,7 +39,7 @@ A API permite o gerenciamento de pontos de escavação e pesquisadores, enquanto
   ├── package.json                   # Dependências do projeto
   ├── package-lock.json              # Controle de versões do npm
   ├── server.js                      # Inicialização do servidor Express
-
+```
 
 ---
 
@@ -55,7 +55,9 @@ cd projetoCIT
 
 3️⃣ **Instale as dependências:**
 
+```sh
 npm install
+```
 
 4️⃣ **Configure as variáveis de ambiente no `.env`**
 
