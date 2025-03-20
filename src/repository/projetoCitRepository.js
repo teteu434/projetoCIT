@@ -1,4 +1,4 @@
-import consultaSimples from '../db/projetoCitDatabase.js'
+import consultaSimples from '../db/projetoCitDatabase.js';
 
 /**
  * Classe responsável por gerenciar operações no banco de dados para os registros de escavação e pesquisadores.
@@ -16,10 +16,10 @@ class projetoCitRepository {
      * @param {string} descricao - Descrição detalhada da escavação.
      * @returns {Promise} - Retorna uma promessa que resolve se a inserção for bem-sucedida.
      */
-    async createPonto(tipo, latitude, longitude, altitude, responsavel, dataDescoberta, descricao){
+    async createPonto(id, tipo, latitude, longitude, altitude, responsavel, dataDescoberta, descricao){
         return consultaSimples(
-            'insert into escavacao (tipo, latitude, longitude, altitude, responsavel, descricao, dataDescoberta) values ($1, $2, $3, $4, $5, $6, $7)', 
-            [tipo, latitude, longitude, altitude, responsavel, descricao, dataDescoberta], 
+            'insert into escavacao (id, tipo, latitude, longitude, altitude, responsavel, descricao, dataDescoberta) values ($1, $2, $3, $4, $5, $6, $7, $8)', 
+            [id, tipo, latitude, longitude, altitude, responsavel, descricao, dataDescoberta], 
             'Falha na criação de registro'
         );
     }

@@ -16,8 +16,8 @@ class projetoCitController {
 
     async createPonto(req, res){
         try {
-            const {tipo, latitude, longitude, altitude, responsavel, dataDescoberta, descricao} = req.body;
-            const resultado = await projetoCitRepository.createPonto(tipo, latitude, longitude, altitude, responsavel, dataDescoberta, descricao);
+            const {id, tipo, latitude, longitude, altitude, responsavel, dataDescoberta, descricao} = req.body;
+            const resultado = await projetoCitRepository.createPonto(id, tipo, latitude, longitude, altitude, responsavel, dataDescoberta, descricao);
             if (resultado.correto) res.json({ message: 'Ponto cadastrado com sucesso!', cadastrado: true})
             else res.json({ message: resultado.message, cadastrado: false})
         } catch (error) {
@@ -88,7 +88,7 @@ class projetoCitController {
             const resultado = await projetoCitRepository.findByResponsavelPonto(responsavel);
             if (resultado.correto){
                 if(resultado.resultado.length > 0) res.json({ pontos: resultado.resultado, busca: true})
-                else res.json({ message: 'Responsável não consta na base de dados', busca: false})
+                else res.json({ message: 'Pesquisador não é responsável por pontos de escavação no banco de dados.', busca: false})
             } 
             else res.json({ message: resultado.message, busca: false})
         } catch (error) {
@@ -111,10 +111,10 @@ class projetoCitController {
                 // Confere Se houve alguma atualização, pois se tentar atualizar uma row que não existe no banco de dados, o código não dá erro, apenas não faz nada
                 // Então, se por acaso o código não fizer nada, já retorna que não foi atualizado nada porque o ID fornecido não consta no banco.
 
-                if(resultado.update > 0) res.json({ message: 'Atualizado com sucesso!', atualizacao: true})
-                else res.json({ message: 'ID não consta na base de dados', atualizacao: false})
+                if(resultado.update > 0) res.send('Atualizado com sucesso!')
+                else res.send('ID não consta na base de dados')
             } 
-            else res.json({ message: resultado.message, atualizacao: false})
+            else res.send(resultado.message)
         } catch (error) {
             console.log(error)
         }
@@ -151,8 +151,8 @@ class projetoCitController {
         try {
             const {nome, email, instituicao, especialidade} = req.body;
             const resultado = await projetoCitRepository.createPesquisador(nome, email, instituicao, especialidade);
-            if (resultado.correto) res.json({ message: 'Pesquisador cadastrado com sucesso!', cadastrado: true})
-            else res.json({ message: resultado.message, cadastrado: false})
+            if (resultado.correto) res.send('Pesquisador cadastrado com sucesso!')
+            else res.send(resultado.message)
         } catch (error) {
             console.log(error)
         }
@@ -220,10 +220,10 @@ class projetoCitController {
                 // Confere Se houve alguma atualização, pois se tentar atualizar uma row que não existe no banco de dados, o código não dá erro, apenas não faz nada
                 // Então, se por acaso o código não fizer nada, já retorna que não foi atualizado nada porque o nome fornecido não consta no banco.
 
-                if(resultado.update > 0) res.json({ message: 'Atualizado com sucesso!', atualizacao: true})
-                else res.json({ message: 'Nome não consta na base de dados', atualizacao: false})
-            } 
-            else res.json({ message: resultado.message, atualizacao: false})
+                if(resultado.update > 0) res.send('Atualizado com sucesso!')
+                    else res.send('Nome não consta na base de dados')
+                } 
+                else res.send(resultado.message)
         } catch (error) {
             console.log(error)
         }
